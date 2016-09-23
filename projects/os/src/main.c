@@ -42,10 +42,12 @@ const taskDefinition task_list[TASK_COUNT] = {
 static void * tarea1(void * param)
 {
 	int i,j;
-	while (1) {
+	float t=1.1;
+	while (t) {
+		t*=1.1;
 		Board_LED_Toggle(0);
-		//for(i=0;i<1000000;i++) j=i;
-		delay(300);
+//		for(i=0;i<1000000;i++) j=i;
+		delay(1000);
 	}
 	return (void *)0; /* a dónde va? */
 }
@@ -53,10 +55,13 @@ static void * tarea1(void * param)
 static void * tarea2(void * param)
 {
 	int j=4,i;
-	while (j) {
+	float t=1;
+	while (t) {
+		t*=1.1;
 		Board_LED_Toggle(3);
-		for(i=0;i<1000000;i++) j=i;
-		delay(150);
+//		for(i=0;i<1000000;i++) j=i;
+		t*=1.1;
+		delay(1000);
 	}
 	return (void *)4; /* a dónde va? */
 }
@@ -64,10 +69,12 @@ static void * tarea2(void * param)
 static void * tarea3(void * param)
 {
 	int i,j;
-	while (1) {
+	float t=1.1;
+	while (t) {
+		t*=1.1;
 		Board_LED_Toggle(4);
-		//for(i=0;i<1000000;i++) j=i;
-		delay(100);
+		for(i=0;i<1000000;i++) j=i;
+		delay(1000);
 	}
 	return (void *)0; /* a dónde va? */
 }
@@ -75,10 +82,12 @@ static void * tarea3(void * param)
 static void * tarea4(void * param)
 {
 	int j=4,i;
-	while (j) {
+	float t=1;
+	while (t) {
+		t*=1.1;
 		Board_LED_Toggle(5);
 		for(i=0;i<1000000;i++) j=i;
-//		delay(1000);
+		//delay(1000);
 	}
 	return (void *)4; /* a dónde va? */
 }

@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 encoding//projects/os/inc/os.h=UTF-8
+encoding//projects/os/src/PendSV_Handler.S=UTF-8
 encoding//projects/os/src/main.c=UTF-8
 encoding//projects/os/src/os.c=UTF-8

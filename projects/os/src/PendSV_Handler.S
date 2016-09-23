@@ -17,13 +17,25 @@ PendSV_Handler:
 	Por convención (AAPCS), paso el parámetro en R0 y devuelvo
 	el valor en R0.
 	*/
+
+
+	tst lr,0x10
+	it eq
+	vpusheq {s16-s31}
+	push {lr}
+
 	mrs r0, msp /* r0 = msp */
 	bl getNextContext /* r0 = siguiente puntero de pila
 	uso la instrucción bl (branch with link) */
+
+	tst lr,0x10
+	it eq
+	vpopeq {s16-s31}
+//	push {lr}
 
 	msr msp, r0 /* msp = r0 */
 
 	pop {r4-r11,lr}
 
 	bx lr /* retorno de interrupción,
-debería recuperar el contexto armado en task_create */
+deberá recuperar el contexto armado en task_create */

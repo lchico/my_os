@@ -191,7 +191,6 @@ int32_t getNextContext(int32_t current_context)
 	uint32_t i;
 	static uint32_t pcount=0;
 
-
 	/* guardo contexto actual si es necesario */
 	if (current_task == IDLE_TASK) {
 		idle_task_control.sp = current_context;
